@@ -1,0 +1,39 @@
+{
+    "tasks": [
+        {
+            "label": "Cmake",
+            "type": "shell",
+            "command": "cd ${workspaceRoot}/build && cmake .. -DMAKE_OWN_MODE=True -DCMAKE_BUILD_TYPE:STRING=Debug",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "args": []
+        },
+        {
+            "label": "Make",
+            "type": "shell",
+            "command": "make -j`nproc`",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "args": []
+        },
+        {
+            "label": "Make Install",
+            "type": "shell",
+            "command": "make install",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            }
+        },
+        {
+            "label": "CMake & Build",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Cmake",
+                "Make",
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
