@@ -283,7 +283,7 @@ int main(int argc, char * argv[]) {
     printf("Route table\r\n");
     csp_route_print_table();
 
-    csp_rtable_set(10, 0, default_iface, CSP_NO_VIA_ADDRESS);
+    csp_rtable_set(15, 0, default_iface, CSP_NO_VIA_ADDRESS);
 
     /* Start server thread */
         csp_thread_create(task_server, "SERVER", 1000, NULL, 0, NULL);
